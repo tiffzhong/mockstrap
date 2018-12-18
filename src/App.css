@@ -1,32 +1,196 @@
-.App {
+@import url("https://fonts.googleapis.com/css?family=Kaushan+Script");
+
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: black;
+}
+
+header > div {
+  /* content */
+  height: 100%;
+  margin: 0 auto;
+  width: 80%;
+  padding: 20px;
+
+  /* display */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  /* decor */
+  background-color: black;
+}
+
+header div ul {
+  background-color: black;
+  display: flex;
+}
+
+.logo {
+  color: #fed136;
+  font-family: "Kaushan Script", cursive;
+  font-size: 25px;
+}
+header a {
+  color: white;
+  text-decoration: none;
+}
+
+header li {
+  margin: 0 10px;
+}
+
+header button {
+  background-color: #fed136;
+  border-radius: 10%;
+  margin-right: 10px;
+  display: none;
+  width: 70px;
+  justify-content: center;
+  height: 30px;
+  font-size: 12px;
+  color: white;
+  border: none;
+}
+
+@media (max-width: 700px) {
+  header ul {
+    position: fixed;
+    top: 50px;
+    left: 0;
+    flex-direction: column;
+    width: 100vw;
+    /* this is to scoot the green bar to the left, bcus ui's have spacing by default */
+    padding: 20px;
+    transition: 0.3s;
+    /* makes the menu bar move down */
+    z-index: -1;
+    /* comes from under the header bar */
+  }
+  header li {
+    margin: 10px 0;
+    margin-left: 40px;
+  }
+  header button {
+    display: flex;
+  }
+  .show {
+    transform: translate(0, 0);
+  }
+
+  .hide {
+    transform: translate(0, -400px);
+  }
+}
+
+/* Banner */
+.banner-container {
+  background-image: url("../src/components/header-bg.jpg");
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background-position: center;
+  padding: 150px 15px;
+}
+
+.banner-container h2 {
+  color: white;
+  font-style: italic;
+  font-size: 22px;
+  margin-bottom: 25px;
+  text-align: center;
+  display: block;
+}
+
+.banner-container h1 {
+  color: white;
+  font-weight: 700;
+  font-size: 50px;
+  margin: 25px auto;
+  text-transform: uppercase;
+  box-sizing: border-box;
+  display: block;
+  text-align: center;
+}
+.banner-container button {
+  background-color: #fed136;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 20px 40px;
+  display: block;
+  border: none;
+  border-radius: 5%;
+  margin: auto;
+}
+
+.services-container {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.cart-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+  margin: 20px auto;
+}
+.services-container h2 {
+  padding: 20px;
+  font-size: 45px;
+  margin-top: 0;
+  margin-bottom: 15px;
 }
 
-.App-link {
-  color: #61dafb;
+.services-container h4 {
+  font-size: 30px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.services-container h3 {
+  font-style: italic;
+}
+.services-container img {
+  width: 150px;
+}
+
+.ecommerce-container {
+  flex: 2;
+  width: 100%;
+  padding: 30px;
+}
+.design-container {
+  flex: 2;
+  width: 100%;
+  padding: 30px;
+}
+
+.web-container {
+  flex: 2;
+  width: 100%;
+  padding: 30px;
+}
+
+@media (max-width: 550px) {
+  .cart-container {
+    width: 100%;
+    display: block;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: 20px 15px;
   }
-  to {
-    transform: rotate(360deg);
+  .ecommerce-container {
+    padding: 10px;
+  }
+  .design-container {
+    padding: 10px;
+  }
+
+  .web-container {
+    padding: 10px;
   }
 }
